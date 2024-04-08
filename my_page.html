@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		#messageBox {
+			width: 100%;
+			height: 100px;
+			background-color: lightgray;
+			text-align: center;
+			line-height: 100px;
+			font-size: 18px;
+		}
+	</style>
+	<script type="text/javascript">
+		function callNativeFunction() {
+		 document.getElementById("messageBox").innerText = "调用了getAccessToken";
+			dzhSj.getAccessToken();
+		}
+
+		function getAccessTokenResult(message) {
+			 document.getElementById("messageBox").innerText = message;
+		}
+
+		window.onload = function() {
+			callNativeFunction()
+		}
+	</script>
+</head>
+<body>
+<div id="messageBox">这是初始消息</div>
+<button onclick="callNativeFunction()">获取token</button>
+
+</body>
+</html>
